@@ -1,0 +1,232 @@
+body {
+  font-family: Arial, sans-serif;
+  line-height: 1.6;
+  color: #333;
+  background-color: #f4f4f4;
+  margin: 0;
+  padding: 0;
+  overflow-y: scroll;
+}
+
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 20px;
+}
+
+header {
+  background-color: #3498db;
+  color: #fff;
+  text-align: center;
+  padding: 20px 0;
+  border-radius: 5px 5px 0 0;
+}
+
+nav ul {
+  list-style-type: none;
+  padding: 0;
+  margin: 0;
+  display: flex;
+  justify-content: space-around;
+}
+
+nav ul li {
+  margin: 0 1rem;
+}
+
+nav ul li a {
+  text-decoration: none;
+  color: white;
+  font-weight: bold;
+  line-height: 1.5rem;
+}
+
+nav ul li a:hover {
+  text-decoration: underline;
+}
+
+h1,
+h2,
+h3 {
+  font-family: "Poppins", sans-serif;
+  margin: 0;
+}
+
+h1 {
+  font-size: 2.5em;
+  margin-bottom: 10px;
+}
+
+.ubicacion {
+  font-style: italic;
+  margin-bottom: 0;
+}
+
+main {
+  background-color: #fff;
+  padding: 20px;
+  border-radius: 0 0 5px 5px;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+h2 {
+  color: #2c3e50;
+  margin-bottom: 20px;
+  border-bottom: 2px solid #3498db;
+  padding-bottom: 10px;
+}
+
+.grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+  gap: 20px;
+}
+
+.card {
+  background-color: #ecf0f1;
+  border-radius: 5px;
+  padding: 15px;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+  transition: transform 0.3s ease;
+  display: flex;
+  align-items: center;
+}
+
+.grid a {
+  text-decoration: none;
+  color: black;
+}
+
+.imagen {
+  width: 100px;
+  height: 100px;
+  margin-right: 15px;
+  flex-shrink: 0;
+}
+
+.imagen img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  border-radius: 50%;
+}
+
+.info {
+  flex-grow: 1;
+}
+
+.info strong {
+  display: inline-block;
+  min-width: 100px;
+}
+
+.section {
+  margin: 20px 0px;
+}
+
+hr {
+  margin: 12px 0px 18px;
+}
+
+.card h3 {
+  color: #3498db;
+  margin-bottom: 10px;
+}
+
+.card p {
+  margin: 5px 0;
+}
+
+p.home span {
+  display: inline-block;
+  min-width: 175px;
+}
+
+a.btn {
+  background-color: #3498db;
+  border-radius: 4px;
+  color: white;
+  margin: 6px 2px;
+  padding: 6px 10px;
+  text-decoration: none;
+}
+
+a.btn.small {
+  margin: 0;
+  padding: 4px 6px;
+}
+
+a.btn:hover {
+  background-color: #197abb;
+}
+
+.flex-grid {
+  align-items: center;
+  display: flex;
+  justify-content: space-between;
+}
+
+@media (max-width: 768px) {
+  .grid {
+    grid-template-columns: 1fr;
+  }
+
+  .card {
+    flex-direction: column;
+    text-align: center;
+  }
+
+  .imagen {
+    margin-right: 0;
+    margin-bottom: 15px;
+  }
+}
+
+.block-message {
+  padding: 15px;
+  margin-bottom: 20px;
+  border: 1px solid transparent;
+  border-radius: 4px;
+  position: relative;
+}
+
+.block-message .close {
+  position: absolute;
+  top: 10px;
+  right: 15px;
+  font-size: 20px;
+  font-weight: bold;
+  text-decoration: none;
+  color: inherit;
+  opacity: 0.7;
+}
+
+.block-message .close:hover {
+  opacity: 1;
+}
+
+.block-message ul {
+  margin: 0;
+  padding-left: 20px;
+}
+
+.block-message li {
+  margin-bottom: 5px;
+}
+
+.block-message.error {
+  color: #721c24;
+  background-color: #f8d7da;
+  border-color: #f5c6cb;
+}
+
+.block-message.success {
+  color: #155724;
+  background-color: #d4edda;
+  border-color: #c3e6cb;
+}
+
+/* Crear una regla que oblique a siempre mostrar el scroll vertical en body */
+body {
+  overflow-y: scroll;
+}

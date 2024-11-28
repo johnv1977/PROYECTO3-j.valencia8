@@ -1,0 +1,3 @@
+
+class MethodDoesNotApplyError(Exception):
+    pass
