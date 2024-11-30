@@ -50,4 +50,4 @@ app_define_global_vars(app)
 
 
 if __name__ == "__main__":
-    app.run(debug=True)
+    app.run()
