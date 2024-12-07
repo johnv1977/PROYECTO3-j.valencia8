@@ -1,0 +1,23 @@
+{% extends "_empty.html" %}
+{% block title %}Productos{% endblock %}
+
+{% block main %}
+<main class="container mt-5">
+  <div class="main-content">
+    <!-- Título de la página -->
+    <h1 class="mb-4">{{ site_name }} / Login</h1>
+
+    <!-- Espacio para la tabla o grid -->
+    <div class="row">
+        <form method="post" action="/users/login">
+            <!-- Captura la página a donde será redirigido después de iniciar sesión -->
+            <input type="hidden" name="_next_page" value="{{ request.args.get('next') }}">
+            <!-- Nombre de usuario y contraseña -->
+            <input name="username" type="text" placeholder="username" required>
+            <input name="password" type="password" placeholder="password" required>
+            <button type="submit">Enviar</button>
+        </form>
+    </div>
+  </div>
+</main>
+{% endblock %}

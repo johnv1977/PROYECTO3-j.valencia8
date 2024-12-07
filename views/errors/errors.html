@@ -1,0 +1,11 @@
+{% extends "_base.html" %}
+
+{% block title %}{{title}}{% endblock %}
+
+{% block main %}
+<!-- Prueba 1 -->
+<h1>Upps</h1>
+<p>{{ error_message }}</p>
+<a class="btn" href="{{ url_for('app.index') }}">Volver</a>
+<hr>
+{% endblock %}

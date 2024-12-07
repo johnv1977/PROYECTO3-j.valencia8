@@ -1,0 +1,68 @@
+{% extends "_base.html" %}
+
+{% block title %}Ingredient {{ ingredient.name }}{% endblock %}
+
+{% block main %}
+<!-- Cambiar utilizando la librería css de bootstrap  -->
+<main class="container mt-5">
+  <div class="main-content">
+    
+    <!-- centrar el contenido -->
+    <div class="row justify-content-center">
+      <div class="col-md-6 mb-6">
+        <h1 class="mb-4">Ingrediente {{ ingredient.name }}</h1>
+        <div class="card h-100">
+          <div class="card-body">
+            <h5 class="card-title text-truncate">{{ ingredient.name }}</h5>
+            <table class="table table-striped table-sm">
+              <tr>
+                <td><strong>Id:</strong></td>
+                <td style="text-align: right;">{{ ingredient.id }}</td>
+              </tr>
+              <tr>
+                <td><strong>Type:</strong></td>
+                <td style="text-align: right;">{{ ingredient.__class__.__name__ }}</td>
+              </tr>
+              <tr>
+                <td><strong>Price:</strong></td>
+                <td style="text-align: right;">{{ ingredient.price }}</td>
+              </tr>
+              <tr>
+                <td><strong>Calories:</strong></td>
+                <td style="text-align: right;">{{ ingredient.calories }}</td>
+              </tr>
+              <tr>
+                <td><strong>Is Vegetarian:</strong></td>
+                <td style="text-align: right;">{{ ingredient.is_vegetarian }}</td>
+              </tr>
+              <tr>
+                <td><strong>Units:</strong></td>
+                <td style="text-align: right;">{{ ingredient.units }}</td>
+              </tr>
+              <tr>
+                <td><strong>Extra Data:</strong></td>
+                <td style="text-align: right;">{{ ingredient.extra_data }}</td>
+              </tr>
+            </table>
+            <table class="table table-striped table-sm">
+              <th>Productos:</th>
+              </th>
+              <th style="text-align: right;">Id:</th>
+              {% for product in ingredient.products %}
+              <tr>
+                <td>{{ product.name }}</td>
+                <td style="text-align: right;">
+                  <a class="btn btn-primary" href="{{ url_for('products.show', id=product.id) }}">
+                    {{ product.id }}
+                  </a>
+                </td>
+              </tr>
+              {% endfor %}
+            </table>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</main>
+{% endblock %}

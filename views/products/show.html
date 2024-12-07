@@ -1,0 +1,72 @@
+{% extends "_base.html" %}
+
+{% block title %}Producto {{ product.name }}{% endblock %}
+
+{% block main %}
+<!-- Cambiar utilizando la librería css de bootstrap  -->
+<main class="container mt-5">
+  <div class="main-content">
+    
+    <!-- centrar el contenido -->
+    <div class="row justify-content-center">
+      <div class="col-md-6 mb-6">
+        <h1 class="mb-4">Producto {{ product.name }}</h1>
+        <div class="card">
+          <div class="card-body">
+            <h5 class="card-title text-truncate">{{ product.name }}</h5>
+            <table class="table table-striped table-sm">
+              <tr>
+                <td><strong>Id:</strong></td>
+                <td style="text-align: right;">{{ product.id }}</td>
+              </tr>
+              <tr>
+                <td><strong>Type:</strong></td>
+                <td style="text-align: right;">{{ product.__class__.__name__ }}</td>
+              </tr>
+              <tr>
+                <td><strong>Price:</strong></td>
+                <td style="text-align: right;">{{ product.price }}</td>
+              </tr>
+              <tr>
+                <td><strong>Calories:</strong></td>
+                <td style="text-align: right;">{{ product.calculate_calories() }}</td>
+              </tr>
+              <tr>
+                <td><strong>Cost:</strong></td>
+                <td style="text-align: right;">{{ product.calculate_cost() }}</td>
+              </tr>
+              <tr>
+                <td><strong>Profit:</strong></td>
+                <td style="text-align: right;">{{ product.calculate_profit() }}</td>
+              </tr>
+              <tr>
+                <td><strong>Is available:</strong></td>
+                <td style="text-align: right;">{{ product.is_available() }}</td>
+              </tr>
+              <tr>
+                <td><strong>Extra Data:</strong></td>
+                <td style="text-align: right;">{{ product.extra_data }}</td>
+              </tr>
+            </table>
+            <table class="table table-striped table-sm">
+              <th>Ingrediente:</th>
+              </th>
+              <th style="text-align: right;">Cantidad:</th>
+              {% for ingredient in product.ingredients %}
+              <tr>
+                <td>{{ ingredient.name }}</td>
+                <td style="text-align: right;">
+                  <a class="btn btn-primary" href="{{ url_for('ingredients.show', id=ingredient.id) }}">
+                    {{ ingredient.id }}
+                  </a>
+                </td>
+              </tr>
+              {% endfor %}
+            </table>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</main>
+{% endblock %}
